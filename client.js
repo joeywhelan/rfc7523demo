@@ -14,7 +14,7 @@ const audience = "https://server.dummy";
         "iss": issuer,
         "sub": subject,
         "aud": audience,
-        "exp": Date.now() + 60000 //60 second expiration        
+        "exp": Math.round(Date.now()/1000+3) //3 second expiration        
     };
     const alg = 'HS512'
     const token = jwt.sign(payload, sharedKey, {algorithm: alg});
